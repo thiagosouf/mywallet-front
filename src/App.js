@@ -16,7 +16,7 @@ export default function App() {
                 <Route path="/cadastro" element={<Cadastro />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/novaEntrada" element={<NovaEntrada />} />
-                <Route path="/novaSaida" element={<novaSaida />} />
+                <Route path="/novaSaida" element={<NovaSaida />} />
             </Routes>
         </BrowserRouter>
         
