@@ -1,11 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+// import { useState } from "react";
 import GlobalStyles from "./globalStyles"; 
-import Login from "./components/Login";
-import Cadastro from "./components/Cadastro";
-import Dashboard from "./components/Dashboard";
-import NovaEntrada from "./components/NovaEntrada";
-import NovaSaida from "./components/NovaSaida";
+import Login from "./Login";
+import Cadastro from "./Cadastro";
+import Dashboard from "./Dashboard";
+import NovaEntrada from "./NovaEntrada";
+import NovaSaida from "./NovaSaida";
+// /cadastro -> formulário de cadastro
+// /login -> formulário de login
+// /painel -> dashboard com lista de entradas e saídas
 
 export default function App() {
     return (
