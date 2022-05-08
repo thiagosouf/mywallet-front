@@ -24,13 +24,14 @@ export default function Cadastro() {
 
         
         const requisicao = axios.post("http://localhost:5000/cadastro", {
-            nome: nome,
+            name: nome,
             email: email,
             senha: senha
         });
         requisicao.then(res => {
             console.log("funcionou");
-            navigate("/");
+            console.log(res);
+            navigate("/", { nome: res.data.name });
         }
         )
         requisicao.catch(err => {
@@ -49,7 +50,7 @@ export default function Cadastro() {
                     <input type="password" id="senha" placeholder="senha" value={senha2} onChange={e => setSenha2(e.target.value)} required></input>    
                     <BotaoGrande type="submit">Cadastrar</BotaoGrande>
                 </Formulario>
-                <Link to="/cadastro"><p>Já tem uma conta? Faça cadastro!</p></Link>
+                <Link to="/"><p>Já tem uma conta? Entre agora!</p></Link>
             </TelaDeCadastro>
     )
 

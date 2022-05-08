@@ -5,7 +5,8 @@ import axios from "axios";
 
 console.log("Tela Login");
 
-export default function Login() {
+export default function Login(props) {
+
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const navigate = useNavigate();
@@ -21,7 +22,9 @@ export default function Login() {
         });
         requisicao.then(res => {
             console.log("Entrou!");
-            navigate("/dashboard", { nome: res.data.nome });
+            console.log(res.data);
+            props.setCodigo(res.data)
+            navigate("/dashboard");
         }
         )
         requisicao.catch(err => {
@@ -37,9 +40,9 @@ export default function Login() {
     
                     <input type="email" id="email" placeholder="email" value={email} onChange={e => setEmail(e.target.value)} required></input>
                     <input type="password" id="senha" placeholder="senha" value={senha} onChange={e => setSenha(e.target.value)} required></input>    
-                    <BotaoGrande type="submit">Cadastrar</BotaoGrande>
+                    <BotaoGrande type="submit">Entrar</BotaoGrande>
                 </Formulario>
-                <Link to="/cadastro"><p>Já tem uma conta? Faça login!</p></Link>
+                <Link to="/cadastro"><p>Primeira vez? Cadastre-se!</p></Link>
             </TelaDeLogin>
     )
 
