@@ -9,7 +9,8 @@ console.log("Tela Dashboard");
 
 export default function Dashboard(props) {
     const { codigo } = props;
-    const nome = codigo.name;
+    console.log("codigo:")
+    console.log(codigo);
     const navigate = useNavigate();
     const [movimento, setMovimento] = useState([]);
     console.log(codigo);
@@ -43,16 +44,16 @@ export default function Dashboard(props) {
         })
         return(<>{
             saldo > 0 ? (
-                <p style={{ color: "green" }}>{saldo}</p>
+                <p style={{ color: "green" }}>{saldo.toFixed(2)}</p>
             ):(
-                <p style={{ color: "red" }}>{saldo}</p>
+                <p style={{ color: "red" }}>{saldo.toFixed(2)}</p>
             )
         }</>);
         }
     
   
     useEffect(() => {
-        const requisicao = axios.get("http://localhost:5000/painel");
+        const requisicao = axios.get("http://localhost:5000/painel")
         requisicao.then(res => {
             console.log("buscou o extrato");
             console.log(res.data);   
