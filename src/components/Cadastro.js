@@ -26,12 +26,12 @@ export default function Cadastro() {
         const requisicao = axios.post("http://localhost:5000/cadastro", {
             name: nome,
             email: email,
-            senha: senha
+            senha: senha,
+            confirmSenha: senha2
         });
         requisicao.then(res => {
             console.log("funcionou");
-            console.log(res);
-            navigate("/", { nome: res.data.name });
+            navigate("/");
         }
         )
         requisicao.catch(err => {
