@@ -16,7 +16,7 @@ export default function NovaEntrada(props) {
 
         console.log("entrou no salvarEntrada");
 
-        const requisicao = axios.post("http://localhost:5000/painel", {
+        const requisicao = axios.post("https://mywalletbf.herokuapp.com/painel", {
             name: codigo.name,
             valor: valor,
             descricao: descricao,

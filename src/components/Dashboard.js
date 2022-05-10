@@ -53,7 +53,7 @@ export default function Dashboard(props) {
     
   
     useEffect(() => {
-        const requisicao = axios.get("http://localhost:5000/painel")
+        const requisicao = axios.get("https://mywalletbf.herokuapp.com/painel")
         requisicao.then(res => {
             console.log("buscou o extrato");
             console.log(res.data);   

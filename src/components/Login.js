@@ -16,7 +16,7 @@ export default function Login(props) {
 
         console.log("entrou no login");
         
-        const requisicao = axios.post("http://localhost:5000/login", {
+        const requisicao = axios.post("https://mywalletbf.herokuapp.com/login", {
             email: email,
             senha: senha
         });
